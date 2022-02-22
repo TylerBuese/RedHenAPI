@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ac2ad095-2d4d-4d67-9201-51685e369d13": {
+      "ProjectGuid": "ac2ad095-2d4d-4d67-9201-51685e369d13",
+      "DisplayName": "RedHenAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
