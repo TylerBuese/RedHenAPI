@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SQLite;
 using RedHenAPI.Models;
+using System.IO;
 namespace RedHenAPI.Backend
 {
     public class database
@@ -33,6 +34,16 @@ CareGiverPhoneNumber) VALUES (
             SQLiteCommand command = new SQLiteCommand(sql, db_conn);
             command.ExecuteNonQuery();
 
+        }
+
+        private void CreateParentTable()
+        {
+            db_conn.Open();
+            var files = Directory.GetFiles(".\\SqlScriptsInit");
+            foreach (var file in files)
+            {
+                //var sql = 
+            }
         }
     }
 }

@@ -11,14 +11,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using RedHenAPI.Backend;
+using System.IO;
 
 namespace RedHenAPI
 {
     public class Startup
     {
+        public void CreateInitialDB()
+        {
+            var init = new database();
+            Directory.CreateDirectory(".\\SqlScriptsInit");
+            init.CreateDatabaseFile();
+        }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            CreateInitialDB();
         }
 
         public IConfiguration Configuration { get; }
