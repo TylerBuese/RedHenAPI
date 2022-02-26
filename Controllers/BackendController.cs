@@ -46,18 +46,24 @@ namespace RedHenAPI.Controllers
             [FromQuery] string Email,
             [FromQuery] bool IsParent)
         {
-
-            var account = new AccountModel
+            try
             {
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                isParent = IsParent,
-                Password = Password
-            };
-            var dbInstance = new database();
-            dbInstance.AddParent(account);
-            return Ok(new { Result = true });
+                var account = new AccountModel
+                {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Email = Email,
+                    isParent = IsParent,
+                    Password = Password
+                };
+                var dbInstance = new database();
+                dbInstance.AddParent(account);
+                return Ok(new { Result = true });
+            } catch (Exception ex)
+            {
+                return StatusCode(500, new {Result = ex.Message});
+            }
+            
         }
 
 
