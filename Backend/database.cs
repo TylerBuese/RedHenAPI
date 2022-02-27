@@ -10,6 +10,7 @@ namespace RedHenAPI.Backend
         public void CreateDatabaseFile()
         {
             SQLiteConnection.CreateFile("Account.db");
+            CreateTables();
         }
 
         public void AddParent(AccountModel account)
@@ -36,13 +37,15 @@ CareGiverPhoneNumber) VALUES (
 
         }
 
-        private void CreateParentTable()
+        private void CreateTables()
         {
             db_conn.Open();
             var files = Directory.GetFiles(".\\SqlScriptsInit");
             foreach (var file in files)
             {
-                //var sql = 
+                var sql = File.ReadAllText(file);
+                SQLiteCommand command = new SQLiteCommand(sql, db_conn);
+                command.ExecuteNonQuery();
             }
         }
     }
