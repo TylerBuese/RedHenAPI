@@ -4,7 +4,10 @@ function Create-InitialSqlScripts() {
 
     $arrayOfUrls = @(
         "https://raw.githubusercontent.com/TylerBuese/RedHenAPI/master/SqlScripts/CreateAccountTable.sql",
-        "https://raw.githubusercontent.com/TylerBuese/RedHenAPI/master/SqlScripts/SeedAccountTable.sql"
+        "https://raw.githubusercontent.com/TylerBuese/RedHenAPI/master/SqlScripts/SeedAccountTable.sql",
+        "https://raw.githubusercontent.com/TylerBuese/RedHenAPI/master/SqlScripts/CreateKidTable.sql",
+        "https://raw.githubusercontent.com/TylerBuese/RedHenAPI/master/SqlScripts/CreateAccountTable.sql"
+
     )
 
     foreach ($url in $arrayOfUrls){
