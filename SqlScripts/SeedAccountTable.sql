@@ -4,6 +4,7 @@ FirstName,
 LastName,
 Email,
 IsParent,
+CreationDate,
 CareGiverID,
 CareGiverStreet,
 CareGiverCity,
@@ -12,4 +13,4 @@ CareGiverState,
 CareGiverNumOfSlotsAvailable,
 CareGiverEmail,
 CareGiverPhoneNumber) VALUES (
-"D00dubad!", "Tyler", "Buese", "Tylerbuese@gmail.com", 1, "192J92H4K", "123 Caregiver Street", "Care City", "Care County", "Care State", "25", "caregiver@redhencare.com", "1-555-555-5555")
+"D00dubad!", "Tyler", "Buese", "Tylerbuese@gmail.com", 1, "2022-02-27", "192J92H4K", "123 Caregiver Street", "Care City", "Care County", "Care State", "25", "caregiver@redhencare.com", "1-555-555-5555")

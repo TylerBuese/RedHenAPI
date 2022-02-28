@@ -3,6 +3,7 @@ using RedHenAPI.Models;
 using RedHenAPI.Backend;
 using System;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RedHenAPI.Controllers
 {
@@ -20,21 +21,6 @@ namespace RedHenAPI.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPost("CreateDatabase")]
-        public IActionResult CreateDatabase()
-        {
-            try
-            {
-                var db = new database();
-                db.CreateDatabaseFile();
-                return Ok(new { Result = true });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
             }
         }
 
@@ -64,6 +50,15 @@ namespace RedHenAPI.Controllers
                 return StatusCode(500, new {Result = ex.Message});
             }
             
+        }
+
+        [HttpGet("GetParent")]
+        public async Task<ActionResult<Object>> GetParent([FromQuery]int accountNumber)
+        {
+
+            var db = new database();
+            var account = db.GetParent(accountNumber);
+            return account;
         }
 
 
