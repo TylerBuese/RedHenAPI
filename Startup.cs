@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using RedHenAPI.Backend;
 using System.IO;
+using System.Diagnostics;
 
 namespace RedHenAPI
 {
